@@ -11,6 +11,7 @@ import OrderedList from "@tiptap/extension-ordered-list";
 import ImageResize from "tiptap-extension-resize-image";
 
 export default function RichTextEditor({ content, onChange }: any) {
+
     const editor = useEditor({
         extensions: [
             StarterKit.configure(),
