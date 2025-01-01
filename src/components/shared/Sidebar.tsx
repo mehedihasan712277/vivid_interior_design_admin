@@ -1,6 +1,10 @@
-import { Info, Home, Users, Briefcase, Folder, FileText, MessageCircle, Star, Mail } from 'lucide-react';
+"use client"
+
+import { Info, Home, Users, Briefcase, Folder, FileText, MessageCircle, Star, Mail, Grid2x2 } from 'lucide-react';
 import bg from "@/assets/polygon.jpg"
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 const menu = [
@@ -40,6 +44,11 @@ const menu = [
         link: "/testimonial"
     },
     {
+        name: "category",
+        icon: <Grid2x2 size={20} color='#fec106' />,
+        link: "/category"
+    },
+    {
         name: "Contact",
         icon: <Mail size={20} color='#ea00ff' />,
         link: "/contact"
@@ -53,6 +62,9 @@ const menu = [
 
 
 const Sidebar = () => {
+    const path = usePathname()
+    console.log(path);
+
     return (
         <>
             <div className="w-80 h-screen fixed top-0 bottom-0 left-0">
@@ -60,25 +72,31 @@ const Sidebar = () => {
                     <div>
                         <Image src={bg} alt='bg' className='w-80 h-screen'></Image>
                     </div>
-                    <div className='bg-[#15273a] bg-opacity-95 text-gray-300 absolute top-0 bottom-0 left-0 w-80 z-10'>
-
-                        <p>Home</p>
-
-                        <p>About us</p>
-
-                        <p>Service</p>
-
-                        <p>Portfolio</p>
-
-                        <p>Blog</p>
-
-                        <p>Consultancy</p>
-
-                        <p>Testimonial</p>
-
-                        <p>Contact</p>
-
-                        <p>Users</p>
+                    <div className='bg-[#15273a] bg-opacity-95 text-gray-300 absolute top-0 bottom-0 left-0 w-80 z-10 px-4  overflow-y-auto'>
+                        <div>
+                            <p className='font-bold text-xl py-6'>
+                                Vivid Interior <br />
+                                & Design
+                            </p>
+                        </div>
+                        <div className='space-y-1 h-[480px]'>
+                            {
+                                menu.map((ele, i) => {
+                                    return <div key={i} className={`${ele.link === path ? "bg-[#1F4E79] bg-opacity-60" : "bg-transparent"}  rounded-md`}>
+                                        <Link href={ele.link}>
+                                            <div className='flex items-center gap-2 px-4 py-2'>
+                                                <span>
+                                                    {ele.icon}
+                                                </span>
+                                                <span>
+                                                    {ele.name}
+                                                </span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
