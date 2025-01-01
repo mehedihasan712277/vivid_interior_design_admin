@@ -2,7 +2,9 @@
 
 const UsersPage = () => {
     return (
-        <div>UsersPage</div>
+        <div>
+            <p className="font-semibold text-blue-950 pb-4">Users</p>
+        </div>
     )
 }
 

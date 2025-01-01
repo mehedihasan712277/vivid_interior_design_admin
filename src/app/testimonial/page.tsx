@@ -2,7 +2,9 @@
 
 const TestimonialPage = () => {
     return (
-        <div>TestimonialPage</div>
+        <div>
+            <p className="font-semibold text-blue-950 pb-4">Testimonial</p>
+        </div>
     )
 }
 

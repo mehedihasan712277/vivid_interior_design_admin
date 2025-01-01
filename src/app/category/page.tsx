@@ -2,7 +2,9 @@
 
 const CategoryPage = () => {
   return (
-    <div>CategoryPage</div>
+    <div>
+      <p className="font-semibold text-blue-950 pb-4">Category</p>
+    </div>
   )
 }
 

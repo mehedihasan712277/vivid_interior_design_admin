@@ -1,7 +1,10 @@
+import Hero from "@/components/ui/Hero"
+
 const HomePage = () => {
   return (
     <div>
-      homepage
+      <p className="font-semibold text-blue-950 pb-4">Home</p>
+      <Hero></Hero>
     </div>
   )
 }

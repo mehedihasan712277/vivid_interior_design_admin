@@ -2,7 +2,9 @@
 
 const ServicePage = () => {
     return (
-        <div>ServicePage</div>
+        <div>
+            <p className="font-semibold text-blue-950 pb-4">Service</p>
+        </div>
     )
 }
 

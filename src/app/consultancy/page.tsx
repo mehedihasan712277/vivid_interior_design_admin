@@ -2,7 +2,9 @@
 
 const ConsultancyPage = () => {
     return (
-        <div>ConsultancyPage</div>
+        <div>
+            <p className="font-semibold text-blue-950 pb-4">Consultancy</p>
+        </div>
     )
 }
 
