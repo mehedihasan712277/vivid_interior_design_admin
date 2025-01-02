@@ -82,7 +82,7 @@ const Sidebar = () => {
                         <div className='space-y-1 h-[480px]'>
                             {
                                 menu.map((ele, i) => {
-                                    return <div key={i} className={`${ele.link === path ? "bg-[#1F4E79] bg-opacity-60" : "bg-transparent"}  rounded-md`}>
+                                    return <div key={i} className={`${ele.link === path ? "bg-[#1F4E79] bg-opacity-60" : "bg-transparent"}  rounded-md hover:bg-[#1F4E79] hover:bg-opacity-30 transition-all duration-150`}>
                                         <Link href={ele.link}>
                                             <div className='flex items-center gap-2 px-4 py-2'>
                                                 <span>
