@@ -25,7 +25,8 @@ const PostPage = () => {
     const authContext = useContext(AuthContext)
     if (!authContext) {
         // Handle the case where AuthContext is null
-        throw new Error("AuthContext must be used within an AuthProvider");
+        // throw new Error("AuthContext must be used within an AuthProvider");
+        return null;
     }
     const { value, changeValue } = authContext
     //------------------------------------------

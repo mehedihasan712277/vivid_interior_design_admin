@@ -1,11 +1,18 @@
 "use client";
 import { base_url } from "@/utils/constants";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import RichTextEditor from "./RichTextEditor/RichTextEditor";
+import { AuthContext } from "../shared/AuthProvider";
 
 const AddServiceForm = () => {
+    const authContext = useContext(AuthContext)
+    if (!authContext) {
+        return null
+    }
+    const { changeServiceKey } = authContext;
+
     const [formData, setFormData] = useState({
         title: "",
         subtitle: "",
@@ -34,7 +41,7 @@ const AddServiceForm = () => {
                     img: "",
                     description: "",
                 });
-
+                changeServiceKey()
                 Swal.fire({
                     title: "Success!",
                     text: "Service Posted Successfully",
