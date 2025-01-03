@@ -101,7 +101,7 @@ export default function ToolBar({ editor }: any) {
     ];
 
     return (
-        <div className="border rounded-md p-1.5 mb-1 bg-slate-300 space-x-1 ">
+        <div className="border rounded-md p-1.5 mb-1 bg-slate-300 space-x-1">
             {Options.map((option, i) => (
                 <Toggle
                     key={i}

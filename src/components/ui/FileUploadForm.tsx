@@ -2,7 +2,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios, { AxiosResponse } from "axios";
 import CopyLink from "./CopyLink";
-
+import { base_url } from "@/utils/constants";
 
 const FileUploadForm = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null); // Single file
@@ -11,7 +11,16 @@ const FileUploadForm = () => {
 
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>): void => {
         const file = event.target.files?.[0] || null; // Only take the first file
-        setSelectedFile(file);
+        if (file) {
+            // Check if the file type is PNG, JPG, or JPEG
+            const validFormats = ["image/png", "image/jpeg", "image/jpg"];
+            if (!validFormats.includes(file.type)) {
+                setUploadMessage("Invalid file format! Please upload a PNG, JPG, or JPEG file.");
+                setSelectedFile(null); // Reset file input
+                return;
+            }
+            setSelectedFile(file);
+        }
     };
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
@@ -23,11 +32,11 @@ const FileUploadForm = () => {
         }
 
         const formData = new FormData();
-        formData.append("avatar", selectedFile); // Append single file
+        formData.append("file", selectedFile); // Append single file
 
         try {
             const response: AxiosResponse = await axios.post(
-                "http://localhost:5000/img",
+                `${base_url}/file`,
                 formData,
                 {
                     headers: {
@@ -36,12 +45,11 @@ const FileUploadForm = () => {
                 }
             );
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 setUploadMessage("File uploaded successfully!");
-                console.log(response.data);
-                setLink(`http://localhost:5000/${response.data.path}`)
+                setLink(`${response.data}`);
             } else {
-                setUploadMessage(`Error: ${response.statusText}`);
+                setUploadMessage(`Error: ${response.status}`);
             }
         } catch (error: unknown) {
             const errorMessage =
@@ -52,7 +60,6 @@ const FileUploadForm = () => {
                         : "Unknown error";
             setUploadMessage(errorMessage);
         }
-
     };
 
     return (
@@ -60,7 +67,7 @@ const FileUploadForm = () => {
             <form onSubmit={handleSubmit}>
                 <input
                     type="file"
-                    name="avatar"
+                    name="file"
                     onChange={handleFileChange}
                     style={{ marginBottom: "10px" }}
                 />

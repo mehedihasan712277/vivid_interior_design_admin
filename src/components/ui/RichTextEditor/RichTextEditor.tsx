@@ -23,12 +23,12 @@ export default function RichTextEditor({ content, onChange }: any) {
             }),
             OrderedList.configure({
                 HTMLAttributes: {
-                    class: "list-decimal ml-3",
+                    class: "list-decimal ml-6",
                 },
             }),
             BulletList.configure({
                 HTMLAttributes: {
-                    class: "list-disc ml-3",
+                    class: "list-disc ml-6",
                 },
             }),
             Highlight,
