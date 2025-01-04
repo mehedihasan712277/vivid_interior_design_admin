@@ -42,7 +42,7 @@ export default function RichTextEditor({ content, onChange }: RichTextEditorProp
         content: content,
         editorProps: {
             attributes: {
-                class: "min-h-[156px] min-w-[600px] rounded-md bg-[#182232] py-2 px-3 text-white",
+                class: "min-h-[156px] min-w-[595px] rounded-md bg-[#182232] py-2 px-3 text-white",
             },
         },
         onUpdate: ({ editor }) => {
