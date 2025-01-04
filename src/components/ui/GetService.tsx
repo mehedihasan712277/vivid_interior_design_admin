@@ -46,7 +46,7 @@ const GetService = () => {
                         </div>
                     })
                     :
-                    <div className='flex flex-col items-center justify-center gap-4 w-[300px] h-[500px]'>
+                    <div className='flex flex-col items-center justify-center gap-4 w-[300px] h-[450px]'>
                         <div className='text-gray-600'>
                             <CircleOff size={40} />
                         </div>

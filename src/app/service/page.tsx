@@ -17,7 +17,7 @@ const ServicePage = () => {
 
     return (
         <div className="flex w-full justify-between">
-            <div className="w-[608px] h-[500px] overflow-y-auto p-1 custom-scrollbar">
+            <div className="w-[612px] h-[480px] overflow-y-auto pl-1 pr-2 custom-scrollbar">
                 <div className={value ? "block" : "hidden"}>
                     <PopUp></PopUp>
                 </div>
@@ -29,7 +29,7 @@ const ServicePage = () => {
                 <AddServiceForm></AddServiceForm>
             </div>
 
-            <div className=" h-[500px] overflow-y-auto pr-4 rounded-md custom-scrollbar">
+            <div className=" h-[480px] overflow-y-auto pr-4 rounded-md custom-scrollbar">
                 <GetService></GetService>
             </div>
         </div>
