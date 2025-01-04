@@ -38,7 +38,7 @@ export default function RichTextEditor({ content, onChange }: any) {
         content: content,
         editorProps: {
             attributes: {
-                class: "min-h-[156px] border rounded-md bg-slate-200 py-2 px-3",
+                class: "min-h-[156px] min-w-[600px] rounded-md bg-[#182232] py-2 px-3 text-white",
             },
         },
         onUpdate: ({ editor }) => {

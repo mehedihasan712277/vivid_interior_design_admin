@@ -6,7 +6,7 @@ import {
     Heading1,
     Heading2,
     Heading3,
-    Code,
+    // Code,
     Bold,
     Italic,
     Strikethrough,
@@ -83,11 +83,11 @@ export default function ToolBar({ editor }: any) {
             onClick: () => editor.chain().focus().toggleOrderedList().run(),
             preesed: editor.isActive("orderedList"),
         },
-        {
-            icon: <Code className="size-4" />,
-            onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-            preesed: editor.isActive("code"),
-        },
+        // {
+        //     icon: <Code className="size-4" />,
+        //     onClick: () => editor.chain().focus().toggleCodeBlock().run(),
+        //     preesed: editor.isActive("code"),
+        // },
         {
             icon: <Highlighter className="size-4" />,
             onClick: () => editor.chain().focus().toggleHighlight().run(),
@@ -101,7 +101,7 @@ export default function ToolBar({ editor }: any) {
     ];
 
     return (
-        <div className="border rounded-md p-1.5 mb-1 bg-slate-300 space-x-1">
+        <div className="rounded-md p-1.5 mb-1 bg-[#182232] space-x-1 text-gray-400">
             {Options.map((option, i) => (
                 <Toggle
                     key={i}

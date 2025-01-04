@@ -16,19 +16,20 @@ const ServicePage = () => {
 
 
     return (
-        <div className="flex gap-4">
-            <div className="shadow-md">
+        <div className="flex w-full justify-between">
+            <div className="w-[608px] h-[500px] overflow-y-auto p-1 custom-scrollbar">
                 <div className={value ? "block" : "hidden"}>
                     <PopUp></PopUp>
                 </div>
 
-                <div className="bg-white rounded-md p-2 mb-2 w-full flex gap-3 items-center shadow-md">
-                    <span>Upload image to get url </span>
+                <div className=" bg-[#182232] rounded-md p-2 mb-2 flex gap-3 items-center shadow-md">
+                    <span className="text-gray-400">Upload image to get url </span>
                     <button className="px-4 py-2 bg-blue-950 text-white font-bold rounded-md text-sm" onClick={() => changeValue()}>Upload</button>
                 </div>
                 <AddServiceForm></AddServiceForm>
             </div>
-            <div className="content h-[500px] overflow-y-auto">
+
+            <div className=" h-[500px] overflow-y-auto pr-4 rounded-md custom-scrollbar">
                 <GetService></GetService>
             </div>
         </div>

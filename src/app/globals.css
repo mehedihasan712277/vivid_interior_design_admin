@@ -118,3 +118,20 @@ ol {
   padding-left: 2rem;
 } */
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #222E43;
+    border-radius: 40px;
+}

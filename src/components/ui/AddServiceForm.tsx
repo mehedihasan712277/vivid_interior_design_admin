@@ -70,83 +70,69 @@ const AddServiceForm = () => {
     };
 
     return (
-        <div className=" p-4 bg-white rounded w-fit">
-            <form onSubmit={handleSubmit} className="flex flex-wrap justify-between w-[514px]">
-                {/* Title Field */}
-                <div className="w-[250px]">
-                    <label htmlFor="title" className="block text-sm font-medium text-gray-700">
-                        Title
-                    </label>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={formData.title}
-                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                        required
-                        className="w-full p-2 border rounded-md bg-slate-200"
-                    />
-                </div>
+        <div className="rounded w-fit">
+            <form onSubmit={handleSubmit} className="flex flex-wrap justify-between gap-4">
+                <div className="grid grid-cols-2 gap-4 w-full">
+                    {/* Title Field */}
+                    <div className="">
+                        <input
+                            type="text"
+                            placeholder="title"
+                            name="title"
+                            value={formData.title}
+                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                            required
+                            className="w-full p-2 bg-[#1f2937] shadow-none text-white rounded-sm "
+                        />
+                    </div>
 
-                {/* Subtitle Field */}
-                <div className="w-[250px]">
-                    <label htmlFor="subtitle" className="block text-sm font-medium text-gray-700">
-                        Subtitle
-                    </label>
-                    <input
-                        type="text"
-                        id="subtitle"
-                        name="subtitle"
-                        value={formData.subtitle}
-                        onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
-                        required
-                        className="w-full p-2 border rounded-md bg-slate-200"
-                    />
-                </div>
+                    {/* Subtitle Field */}
+                    <div className="">
+                        <input
+                            type="text"
+                            placeholder="subtitle"
+                            name="subtitle"
+                            value={formData.subtitle}
+                            onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
+                            required
+                            className="w-full p-2 bg-[#1f2937] shadow-none text-white rounded-sm "
+                        />
+                    </div>
 
-                {/* Type Field */}
-                <div className="w-[250px]">
-                    <label htmlFor="type" className="block text-sm font-medium text-gray-700">
-                        Type
-                    </label>
-                    <select
-                        id="type"
-                        name="type"
-                        value={formData.type}
-                        onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                        required
-                        className="w-full p-2 border rounded-md bg-slate-200"
-                    >
-                        <option value="">Select Type</option>
-                        <option value="Hospital">Hospital</option>
-                        <option value="Residence">Residence</option>
-                        <option value="Showroom">Showroom</option>
-                        <option value="Office">Office</option>
-                        <option value="Restaurant">Restaurant</option>
-                    </select>
-                </div>
+                    {/* Type Field */}
+                    <div className="">
+                        <select
+                            name="type"
+                            value={formData.type}
+                            onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                            required
+                            className="w-full p-2 bg-[#1f2937] shadow-none text-white rounded-sm "
+                        >
+                            <option value="">Select Type</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Residence">Residence</option>
+                            <option value="Showroom">Showroom</option>
+                            <option value="Office">Office</option>
+                            <option value="Restaurant">Restaurant</option>
+                        </select>
+                    </div>
 
-                {/* Image URL Field */}
-                <div className="w-[250px]">
-                    <label htmlFor="img" className="block text-sm font-medium text-gray-700">
-                        Image URL
-                    </label>
-                    <input
-                        type="text"
-                        id="img"
-                        name="img"
-                        value={formData.img}
-                        onChange={(e) => setFormData({ ...formData, img: e.target.value })}
-                        required
-                        className="w-full p-2 border rounded-md bg-slate-200"
-                    />
+                    {/* Image URL Field */}
+                    <div className="">
+                        <input
+                            type="text"
+                            placeholder="img"
+                            name="img"
+                            value={formData.img}
+                            onChange={(e) => setFormData({ ...formData, img: e.target.value })}
+                            required
+                            className="w-full p-2 bg-[#1f2937] shadow-none text-white rounded-sm "
+                        />
+                    </div>
                 </div>
 
                 {/* Description Field */}
                 <div className="">
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-700">
-                        Description
-                    </label>
                     <RichTextEditor
                         content={formData.description}
                         onChange={(content: string) => setFormData({ ...formData, description: content })}
@@ -156,7 +142,7 @@ const AddServiceForm = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="w-full bg-blue-500 mt-3 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                    className="w-full bg-blue-950 mt-3 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                 >
                     Add Service
                 </button>
