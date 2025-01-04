@@ -1,4 +1,5 @@
 "use client";
+import { Editor } from "@tiptap/react"; // Import the Editor type
 import { List } from "lucide-react";
 // import { Toggle } from "../ui/toggle";
 import { Toggle } from "../toggle";
@@ -6,7 +7,6 @@ import {
     Heading1,
     Heading2,
     Heading3,
-    // Code,
     Bold,
     Italic,
     Strikethrough,
@@ -18,8 +18,13 @@ import {
 } from "lucide-react";
 import { ListOrdered } from "lucide-react";
 
-export default function ToolBar({ editor }: any) {
+interface ToolBarProps {
+    editor: Editor | null; // Define the type for the editor prop
+}
+
+export default function ToolBar({ editor }: ToolBarProps) {
     if (!editor) return null;
+
     const addImage = () => {
         const url = window.prompt("URL");
         if (url) {
@@ -83,11 +88,6 @@ export default function ToolBar({ editor }: any) {
             onClick: () => editor.chain().focus().toggleOrderedList().run(),
             preesed: editor.isActive("orderedList"),
         },
-        // {
-        //     icon: <Code className="size-4" />,
-        //     onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-        //     preesed: editor.isActive("code"),
-        // },
         {
             icon: <Highlighter className="size-4" />,
             onClick: () => editor.chain().focus().toggleHighlight().run(),

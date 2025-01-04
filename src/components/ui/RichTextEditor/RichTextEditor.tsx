@@ -10,8 +10,12 @@ import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import ImageResize from "tiptap-extension-resize-image";
 
-export default function RichTextEditor({ content, onChange }: any) {
+interface RichTextEditorProps {
+    content: string; // Initial HTML content for the editor
+    onChange: (content: string) => void; // Callback to handle content changes
+}
 
+export default function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     const editor = useEditor({
         extensions: [
             StarterKit.configure(),
@@ -42,7 +46,6 @@ export default function RichTextEditor({ content, onChange }: any) {
             },
         },
         onUpdate: ({ editor }) => {
-            // console.log(editor.getHTML());
             onChange(editor.getHTML());
         },
     });

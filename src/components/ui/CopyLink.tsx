@@ -3,7 +3,7 @@
 type UrlType = {
     url: string
 }
-import Image from "next/image";
+// import Image from "next/image";
 import { useState } from "react";
 
 const CopyLink = ({ url }: UrlType) => {
@@ -29,7 +29,7 @@ const CopyLink = ({ url }: UrlType) => {
                             <div className="text-xs bg-slate-200 p-2 w-[400px]">
                                 {url}
                             </div>
-                            {/* <Image src={url} alt="img" width={300} height={300}></Image> */}
+                            {/* <Image src={url} alt="img" width={300} height={300} ></Image> */}
                         </div>
 
                         <div>
