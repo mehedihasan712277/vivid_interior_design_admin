@@ -8,10 +8,7 @@ import { AuthContext } from "../shared/AuthProvider";
 
 const AddServiceForm = () => {
     const authContext = useContext(AuthContext)
-    if (!authContext) {
-        return null
-    }
-    const { changeServiceKey } = authContext;
+
 
     const [formData, setFormData] = useState({
         title: "",
@@ -20,6 +17,13 @@ const AddServiceForm = () => {
         img: "",
         description: "",
     });
+
+
+
+    if (!authContext) {
+        return null
+    }
+    const { changeServiceKey } = authContext;
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -33,7 +37,7 @@ const AddServiceForm = () => {
 
         await axios
             .post(`${base_url}/service`, trimmedData)
-            .then((res) => {
+            .then(() => {
                 setFormData({
                     title: "",
                     subtitle: "",

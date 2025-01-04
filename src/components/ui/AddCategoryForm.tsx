@@ -10,7 +10,7 @@ const AddCategoryForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        await axios.post(`${base_url}/categorys`, { name: name.trim() }).then((res) => {
+        await axios.post(`${base_url}/categorys`, { name: name.trim() }).then(() => {
             setName("")
             Swal.fire({
                 title: "Success?",
