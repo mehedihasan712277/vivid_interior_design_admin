@@ -34,7 +34,7 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar></Navbar>
           <Sidebar></Sidebar>
-          <div className="bg-[#0f172a] ml-80 mt-[100px] h-[calc(100vh-100px)] overflow-y-auto p-4">
+          <div className="bg-[#0f172a] ml-80 mt-[100px] h-[calc(100vh-100px)] overflow-y-auto p-4 custom-scrollbar">
             {children}
           </div>
         </AuthProvider>
